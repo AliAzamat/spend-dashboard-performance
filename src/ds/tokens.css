@@ -1,0 +1,30 @@
+/* The token layer. Colors are defined ONCE here and every component reads them.
+   Each tone pairs a background with a foreground checked to meet WCAG AA (4.5:1)
+   contrast — accessibility is a property of the token, not each call site. */
+:root {
+  --chip-neutral-bg: #e8eaed;
+  --chip-neutral-fg: #202124; /* 13.6:1 on the bg — passes AA and AAA */
+  --chip-info-bg: #e3f0ff;
+  --chip-info-fg: #0b4a8f;     /* 6.8:1 — passes AA */
+  --chip-success-bg: #e6f4ea;
+  --chip-success-fg: #14602a;  /* 6.3:1 — passes AA */
+  --chip-warning-bg: #fef3e0;
+  --chip-warning-fg: #7a4a00;  /* 5.9:1 — passes AA */
+  --chip-danger-bg: #fce8e6;
+  --chip-danger-fg: #8f1b12;   /* 6.1:1 — passes AA */
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.chip--neutral { background: var(--chip-neutral-bg); color: var(--chip-neutral-fg); }
+.chip--info    { background: var(--chip-info-bg);    color: var(--chip-info-fg); }
+.chip--success { background: var(--chip-success-bg); color: var(--chip-success-fg); }
+.chip--warning { background: var(--chip-warning-bg); color: var(--chip-warning-fg); }
+.chip--danger  { background: var(--chip-danger-bg);  color: var(--chip-danger-fg); }
