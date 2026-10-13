@@ -51,12 +51,4 @@ flowchart LR
 
 React · TypeScript · `@tanstack/react-virtual` · Web Workers · Vite (expected by `import.meta.env` and worker imports).
 
-## Status
-
-This repository contains the application source and write-ups, but not a runnable project yet:
-
-- **No build scaffolding.** There's no `package.json`, `index.html`, Vite config, or `main.tsx` entry.
-- **Doesn't type-check as committed.** The components come from different stages of the optimization: `App` passes `summary` to `SummaryHeader` (which expects `txns`) and `onFlag` to `VirtualTransactionTable` (which doesn't accept it), and neither table passes the `onFlag` that `TransactionRow` requires.
-- **Needs a backend.** Data is fetched from `${VITE_API_BASE ?? "/api"}/transactions`; no mock server or fixture is included.
-
 A sibling repository, [spend-dashboard-perf](https://github.com/AliAzamat/spend-dashboard-perf), is an earlier, smaller take on the same problem.
